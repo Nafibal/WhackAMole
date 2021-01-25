@@ -27,6 +27,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+  outline: none;
   transition: 0.2s;
 }
 .btn:hover {
