@@ -11,14 +11,18 @@
   --color-yellow-light: #ffee32;
   --color-cream: rgb(255, 255, 159);
 }
+body {
+  background-color: var(--color-cream);
+}
 
 .container {
   position: relative;
   height: 100vh;
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
-  background-color: var(--color-cream);
 }
 .btn {
   padding: 5px;
@@ -88,4 +92,36 @@
 }
 .diff-btn:nth-child(3) {
   background-color: rgb(245, 53, 53);
+}
+
+.info-container {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+}
+
+.grid {
+  min-height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.grid-easy {
+  width: 750px;
+}
+.grid-medium {
+  width: 950px;
+}
+.grid-hard {
+  width: 100%;
+}
+.square {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--color-dark);
+}
+.grid-hard .square {
+  width: 120px;
+  height: 120px;
 }

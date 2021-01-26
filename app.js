@@ -5,7 +5,7 @@ function init() {
 }
 
 function createMenu() {
-  // get element
+  // get container
   const container = document.querySelector(".container");
   //   create menu
   const menu = document.createElement("div");
@@ -28,17 +28,16 @@ function createMenu() {
     } else if (e.target.dataset.action === "score") {
       // display high score
       console.log("highscore");
-    }
-
-    if (e.target.dataset.diff === "easy") {
-      // create board easy
-      console.log("easy");
-    } else if (e.target.dataset.diff === "medium") {
-      // create board medium
-      console.log("medium");
-    } else if (e.target.dataset.diff === "hard") {
-      // create board hard
-      console.log("hard");
+    } else if (e.target.classList.contains("diff-btn")) {
+      // Start the Game with chosen difficulty
+      startGame(e.target.dataset.diff);
     }
   });
+}
+
+function startGame(difficulty) {
+  console.log(difficulty);
+  // easy 12 square
+  // medium 18 square
+  // hard 36 square
 }
