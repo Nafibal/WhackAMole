@@ -1,3 +1,6 @@
+// get container
+const container = document.querySelector(".container");
+
 init();
 
 function init() {
@@ -5,8 +8,6 @@ function init() {
 }
 
 function createMenu() {
-  // get container
-  const container = document.querySelector(".container");
   //   create menu
   const menu = document.createElement("div");
   menu.classList.add("menu-container");
@@ -36,8 +37,35 @@ function createMenu() {
 }
 
 function startGame(difficulty) {
+  // Set box amount based on difficulty
+  let squareTotal;
+  switch (difficulty) {
+    case "easy":
+      squareTotal = 15;
+      break;
+    case "medium":
+      squareTotal = 18;
+      break;
+    case "hard":
+      squareTotal = 36;
+      break;
+  }
+  // Create GameBoard
+  container.innerHTML = `<div class="info-container">
+        <h3 class="score">Score: 250</h3>
+        <h3 class="time">Time: 60</h3>
+      </div>
+      <div class="grid">
+      </div>`;
+  const grid = document.querySelector(".grid");
+  grid.classList.add(`grid-${difficulty}`);
+  // Create box based on difficulty
+  for (let i = 0; i < squareTotal; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+    grid.appendChild(square);
+  }
+
   console.log(difficulty);
-  // easy 12 square
-  // medium 18 square
-  // hard 36 square
+  console.log(`square: ${squareTotal}`);
 }
